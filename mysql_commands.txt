@@ -1,0 +1,51 @@
+DDL COMMANDS
+
+USE Database Employee_Payroll;
+
+CREATE TABLE Employee(id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100), age INT, email VARCHAR(100), salary DOUBLE, PRIMARY KEY (id));
+
+ALTER TABLE employee ADD COLUMN mobile BIGINT NULL AFTER salary;
+
+DROP TABLE employee;
+
+TRUNCATE TABLE employee;
+
+DML COMMANDS
+
+USE Database Employee_Payroll;
+
+INSERT INTO employee (name, age, email, salary, mobile) VALUES ('Atul', '25', 'atul@gmail.com', '50000', '9919003773');
+
+UPDATE employee SET age = '26' WHERE id = '1';
+
+DELETE FROM employee WHERE id = '1';
+
+DCL COMMANDS
+
+GRANT SELECT,UPDATE on employee to atul;
+
+REVOKE SELECT,UPDATE on employee from atul;
+
+TCL COMMANDS
+
+INSERT INTO employee (name, age, email, salary, mobile) VALUES ('Atul', '25', 'atul@gmail.com', '50000', '9919003773');
+INSERT INTO employee (name, age, email, salary, mobile) VALUES ('Anand', '26', 'anand@gmail.com', '25000', '9919003772');
+INSERT INTO employee (name, age, email, salary, mobile) VALUES ('Aamir', '27', 'aamir@gmail.com', '30000', '9919003771');
+COMMIT;
+
+INSERT INTO employee (name, age, email, salary, mobile) VALUES ('Anand', '26', 'anand@gmail.com', '25000', '9919003772');
+INSERT INTO employee (name, age, email, salary, mobile) VALUES ('Aamir', '27', 'aamir@gmail.com', '30000', '9919003771');
+ROLLBACK;
+
+INSERT INTO employee (name, age, email, salary, mobile) VALUES ('Atul', '25', 'atul@gmail.com', '50000', '9919003773');
+INSERT INTO employee (name, age, email, salary, mobile) VALUES ('Anand', '26', 'anand@gmail.com', '25000', '9919003772');
+INSERT INTO employee (name, age, email, salary, mobile) VALUES ('Aamir', '27', 'aamir@gmail.com', '30000', '9919003771');
+SAVEPOINT;
+INSERT INTO employee (name, age, email, salary, mobile) VALUES ('Anand', '26', 'anand@gmail.com', '25000', '9919003772');
+INSERT INTO employee (name, age, email, salary, mobile) VALUES ('Aamir', '27', 'aamir@gmail.com', '30000', '9919003771');
+
+DQL COMMANDS
+
+SELECT * FROM employee;
+
+
